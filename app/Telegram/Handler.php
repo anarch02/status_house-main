@@ -37,7 +37,7 @@ class Handler extends WebhookHandler
                 Message::create(['text' => $messsage, 'chat_id' => $this->chat->id, 'is_bot' => true]);
                 break;
             case Chat::STATE_AWAITING_PHONE:
-                $messsage = 'Спасибо за регистрацию';
+                $messsage = 'Спасибо за регистрацию. Добро пожаловать! Готов ответить на ваши вопросы по квартирам у моря. Что вас интересует?';
                 $this->chat->update(['phone' => $text, 'state' => Chat::STATE_COMPLETED]);
                 $this->reply($messsage);
                 Message::create(['text' => $messsage, 'chat_id' => $this->chat->id, 'is_bot' => true]);

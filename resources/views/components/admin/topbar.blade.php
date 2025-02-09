@@ -10,7 +10,7 @@
                                 <img src="{{ asset('admin/images/users/user-5.jpg') }}" alt="profile-user" class="rounded-circle" />
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
                             </div>
                         </li>
                     </ul><!--end topbar-nav-->

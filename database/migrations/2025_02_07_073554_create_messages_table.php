@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor('chat_id')->cosntrained()->cascadeOnDelete();
+            $table->foreignIdFor(Chat::class)->constrained()->cascadeOnDelete();
             $table->text('text');
             $table->boolean('is_bot')->default(false);
             $table->timestamps();

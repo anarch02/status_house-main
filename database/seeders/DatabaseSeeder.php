@@ -19,10 +19,12 @@ class DatabaseSeeder extends Seeder
             'token' => env('TELEGRAM_BOT_TOKEN'),
             'name' => 'Test Bot',
         ]);
+
         Instruction::create([
             'instruction' => 'Ты собака и твое имя Шарик',
             'is_active' => 1,
         ]);
+
         User::create([
             'name' => 'Admin',
             'email' => 'mail@onthesea.ge',

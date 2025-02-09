@@ -18,80 +18,38 @@
             </div><!--end page-title-box-->
         </div><!--end col-->
     </div><!--end row-->
+
     <!-- end page title end breadcrumb -->
     <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-3">
-            <div class="card report-card">
+        <div class="col-md-6 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Instuction for AI</h4>
+                </div>
                 <div class="card-body">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col">
-                            <p class="text-dark mb-1 font-weight-semibold">Sessions</p>
-                            <h3 class="my-2">24k</h3>
-                            <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>8.5%</span> New Sessions Today</p>
-                        </div>
-                        <div class="col-auto align-self-center">
-                            <div class="report-main-icon bg-light-alt">
-                                <i data-feather="users" class="align-self-center text-muted icon-md"></i>
+                    <form action="{{ route('updateInstruction') }}" method="post">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="instruction">Instuction text</label>
+                                    @error('instruction')
+                                        <p class="text-damger">{{ $message }}</p>
+                                    @enderror
+                                    <textarea class="form-control" rows="10" name="instruction" id="instruction">{{ $instruction->instruction }}</textarea>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div><!--end card-body-->
-            </div><!--end card-->
-        </div> <!--end col-->
-        <div class="col-md-6 col-lg-3">
-            <div class="card report-card">
-                <div class="card-body">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col">
-                            <p class="text-dark mb-1 font-weight-semibold">Avg.Sessions</p>
-                            <h3 class="my-2">00:18</h3>
-                            <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>1.5%</span> Weekly Avg.Sessions</p>
-                        </div>
-                        <div class="col-auto align-self-center">
-                            <div class="report-main-icon bg-light-alt">
-                                <i data-feather="clock" class="align-self-center text-muted icon-md"></i>
+                        <div class="row">
+                            <div class="col-sm-12 text-right">
+                                <button type="submit" class="btn btn-primary px-4">save</button>
                             </div>
                         </div>
-                    </div>
-                </div><!--end card-body-->
-            </div><!--end card-->
-        </div> <!--end col-->
-        <div class="col-md-6 col-lg-3">
-            <div class="card report-card">
-                <div class="card-body">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col">
-                            <p class="text-dark mb-1 font-weight-semibold">Bounce Rate</p>
-                            <h3 class="my-2">$2400</h3>
-                            <p class="mb-0 text-truncate text-muted"><span class="text-danger"><i class="mdi mdi-trending-down"></i>35%</span> Bounce Rate Weekly</p>
-                        </div>
-                        <div class="col-auto align-self-center">
-                            <div class="report-main-icon bg-light-alt">
-                                <i data-feather="activity" class="align-self-center text-muted icon-md"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--end card-body-->
-            </div><!--end card-->
-        </div> <!--end col-->
-        <div class="col-md-6 col-lg-3">
-            <div class="card report-card">
-                <div class="card-body">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col">
-                            <p class="text-dark mb-1 font-weight-semibold">Goal Completions</p>
-                            <h3 class="my-2">85000</h3>
-                            <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>10.5%</span> Completions Weekly</p>
-                        </div>
-                        <div class="col-auto align-self-center">
-                            <div class="report-main-icon bg-light-alt">
-                                <i data-feather="briefcase" class="align-self-center text-muted icon-md"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--end card-body-->
-            </div><!--end card-->
+                    </form>
+                </div>
+            </div>
         </div> <!--end col-->
     </div><!--end row-->
+
 </div><!-- container -->
 @endsection

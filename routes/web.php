@@ -13,10 +13,12 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/dashboard',[DashboardController::class, 'index'] )->name('dashboard');
+    Route::post('/updateInstruction',[DashboardController::class, 'updateInstruction'] )->name('updateInstruction');
 
     Route::get('/chats',[ChatController::class, 'index'] )->name('chats');
+    Route::get('/chat/{id}',[ChatController::class, 'chat'] )->name('chat');
 
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 });
 

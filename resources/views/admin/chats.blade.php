@@ -26,17 +26,16 @@
                     <div class="tab-content chat-list" id="pills-tabContent" >
                         <div class="tab-pane fade show active" id="general_chat">
                             @foreach ($chats as $chat)
-                            <a href="" class="media">
+                            <a href="{{ route('chat', $chat->id) }}" class="media">
                                 <div class="media-left">
                                     <img src="{{ asset('admin/images/users/user-8.jpg') }}" alt="user" class="rounded-circle thumb-md">
                                 </div><!-- media-left -->
                                 <div class="media-body">
                                     <div>
                                         <h6>{{ $chat->full_name }}</h6>
-                                        <p>How are you Friend...</p>
                                     </div>
                                     <div>
-                                        <span>15 Feb</span>
+                                        <span>{{ $chat->created_at }}</span>
                                     </div>
                                 </div><!-- end media-body -->
                             </a> <!--end media-->
@@ -55,8 +54,8 @@
                         </div><!-- media-left -->
                         <div class="media-body">
                             <div>
-                                <h6 class="m-0">{{ $last_chat->full_name }}</h6>
-                                <p class="mb-0">{{ $last_chat->name }}</p>
+                                <h6 class="m-0">{{ $active_chat->full_name }}</h6>
+                                <p class="mb-0">{{ $active_chat->name }}</p>
                             </div>
                         </div><!-- end media-body -->
                     </a><!--end media-->

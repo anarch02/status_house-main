@@ -10,9 +10,17 @@ class ChatController extends Controller
 {
     public function index()
     {
-        $chats = Chat::all();
-        $last_chat = Chat::latest()->first();
-        $messages = $last_chat->messages;
-        return view('admin.chats', compact('chats', 'messages', 'last_chat'));
+        $chats = Chat::orderBy('id', 'desc')->get();
+        $active_chat = Chat::latest()->first();
+        $messages = $active_chat->messages;
+        return view('admin.chats', compact('chats', 'messages', 'active_chat'));
+    }
+
+    public function chat(string $id)
+    {
+        $chats = Chat::orderBy('id', 'desc')->get();
+        $active_chat = Chat::find($id);
+        $messages = $active_chat->messages;
+        return view('admin.chats', compact('chats', 'messages', 'active_chat'));
     }
 }
