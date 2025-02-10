@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        TelegraphBot::create([
-            'token' => env('TELEGRAM_BOT_TOKEN'),
-            'name' => 'Test Bot',
-        ]);
+        // TelegraphBot::create([
+        //     'token' => env('TELEGRAM_BOT_TOKEN'),
+        //     'name' => 'Test Bot',
+        // ]);
 
         Instruction::create([
             'instruction' => 'Ты собака и твое имя Шарик',
@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Admin',
             'email' => 'mail@onthesea.ge',
-            'password' => bcrypt('password'),
+            'password' => bcrypt('Onthesea'),
         ]);
     }
 }

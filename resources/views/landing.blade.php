@@ -11,12 +11,12 @@
         <meta name="keywords" content="рассрочка без первого взноса, квартиры в Батуми, недвижимость у моря, элитный жилой комплекс">
         <meta property="og:title" content="Беспроцентная рассрочка на квартиры в Батуми — ONTHESEA">
         <meta property="og:description" content="Получите квартиру в Батуми с беспроцентной рассрочкой от ONTHESEA. Беспроцентная рассрочка без первоначального взноса в Грузии. Купите жилье у моря по выгодным условиям без переплат и с возможностью выбора рассрочки.">
-        <meta property="og:image" content="http://elt-status.ge/assets/img/hero/st.jpg">
+        <meta property="og:image" content="{{ asset('assets/img/hero/st.jpg') }}">
         <meta property="og:url" content="http://elt-status.ge">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Беспроцентная рассрочка на квартиры в Батуми — ONTHESEA">
         <meta name="twitter:description" content="Получите квартиру в Батуми с беспроцентной рассрочкой от ONTHESEA. Беспроцентная рассрочка без первоначального взноса в Грузии. Купите жилье у моря по выгодным условиям без переплат и с возможностью выбора рассрочки.">
-        <meta name="twitter:image" content="http://elt-status.ge/assets/img/hero/st.jpg">
+        <meta name="twitter:image" content="{{ asset('assets/img/hero/st.jpg') }}">
         <link rel="shortcut icon" href="{{ asset('assets/img/1.png') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.css') }}">
@@ -29,6 +29,7 @@
     </head>
 
     <body>
+
         <div class="scroll-up">
             <svg class="scroll-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
@@ -191,8 +192,8 @@
                                                 <li><a href="#hero">Главная</a></li>
                                                 <li><a href="#about">О комплексе</a></li>
                                                 <li><a href="#portfolio">Квартиры</a></li>
-                                                <li><a href="#service">Преимущества</a></li>
-                                                <li><a href="#opportunities">Возможности</a></li>
+                                                <li><a href="#service">Возможности</a></li>
+                                                <li><a href="#opportunities">Преимущества</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -200,7 +201,7 @@
                             </div>
                             <div class="header-right d-flex justify-content-end align-items-center">
                                 <div class="header-button">
-                                    <a href="#contact" class="theme-btn bg-red-2">Связаться<i class="fas fa-long-arrow-right"></i></a>
+                                    <button type="button" class="theme-btn" data-bs-toggle="modal" data-bs-target="#feedbackModal" class="theme-btn bg-red-2">Связаться<i class="fas fa-long-arrow-right"></i></и>
                                 </div>
                                 <div class="header__hamburger d-xl-none my-auto">
                                     <div class="sidebar__toggle">
@@ -214,42 +215,38 @@
             </div>
         </header>
 
-        <section class="hero-section hero-3 fix" id="hero">
+        <section class="hero-section hero-3 fix" id="hero" style="background-image: url('{{ asset('assets/img/bat/04.jpg') }}');">
             <div class="container">
                 <div class="row g-5">
+
                     <div class="col-lg-6">
                         <div class="hero-content">
-                            <h1 class="wow fadeInUp" data-wow-delay=".3s">Ваша квартира у моря с предоплатой  0%
-<br>
-                                Беспроцентная рассрочка на весь период!
-                                <br>
-                                Ежемесячный платеж: от 975$</h1>
+                            <div class="mt-5"></div>
+                            <h1 class="wow fadeInUp" data-wow-delay=".3s">Ваша квартира у моря с предоплатой  0%</h1>
+
                             <p class="wow fadeInUp" data-wow-delay=".5s">
+                                Беспроцентная рассрочка на весь период!
+                                Ежемесячный платеж: от 975$.
                                 Элитный жилой комплекс STATUS HOUSE от застройщика ELT Group. Беспроцентная рассрочка на 40 месяцев! Лучшая цена сейчас на котловане, успейте забронировать свою квартиру СЕЙЧАС
                             </p>
                             <div class="hero-button">
-                                <a href="#contact" class="theme-btn radius-none padding-style wow fadeInUp" data-wow-delay=".7s">
-                                    Получить консультацию
+                                <a href="#portfolio" class="theme-btn radius-none padding-style wow fadeInUp" data-wow-delay=".7s">
+                                    Посмотреть квартиру
                                     <i class="fas fa-long-arrow-right"></i>
                                 </a>
-                                <div class="icon-items wow fadeInUp" data-wow-delay=".9s">
-                                    <div class="icon">
-                                        <a href="#contact"><i class="fas fa-phone-alt"></i></a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="hero-slider-items">
-                            <img src="{{ asset('assets/img/ge/17.jpg') }}" class="image hero-img" alt="hero-img">
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="about-section fix section-padding" id="about" style="background-image: url({{ asset('assets/img/service/bg-shape.jpg')}});">
+        <section class="about-section fix section-padding" id="about" style="background-image: url('assets/img/service/bg-shape.jpg');">
             <div class="container">
                 <div class="about-wrapper-3">
                     <div class="row align-items-center">
@@ -273,12 +270,6 @@
                                     Став владельцем недвижимости в STATUS HOUSE, вы получите эксклюзивный доступ к премиальной инфраструктуре и услугам других блоков «ELT Квартала».
                                 </p>
                                 <br>
-                                <div class="about-button wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                                    <a href="#contact" class="theme-btn">
-                                        Забронируйте сейчас
-                                        <i class="fas fa-long-arrow-right"></i>
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
@@ -296,7 +287,7 @@
             <div class="container">
                 <div class="section-title text-center">
                     <span class="wow fadeInUp">Квартиры</span>
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Апартаменты у моря в Батуми , в рассрочку на 40 месяцев</h2>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Апартаменты у моря в Батуми, в рассрочку на 40 месяцев</h2>
                 </div>
                 <div class="portfolio-wrapper-3 pt-5">
                     <div class="row g-4 align-items-center">
@@ -312,26 +303,63 @@
                                     на 40 месяцев<br>
                                     Состояние: черный каркас
                                 </p>
-                                <a href="#contact" class="theme-btn bg-transparent radius-none padding-style wow fadeInUp" data-wow-delay=".7s">
+                                <a href="#0" class="theme-btn bg-transparent radius-none padding-style wow fadeInUp" data-wow-delay=".7s">
                                     от $38,907
                                 </a>
                             </div>
                         </div>
                         <div class="col-lg-6 mt-5 mt-lg-0 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="project-image">
-                                <img src="{{ asset('assets/img/plan/01.avif')}}" alt="img">
+                            <div class="swiper testimonial-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/011.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/01.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/014.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/013.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/012.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6 mt-lg-5 pic-1">
-                            <div class="project-image ms-0 wow fadeInUp" data-wow-delay=".4s">
-                                <img src="{{ asset('assets/img/plan/02.avif')}}" alt="img">
+                            <div class="swiper testimonial-slider ms-0 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/portfolio/03.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/02.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6 mt-lg-0">
                             <div class="portfolio-content">
                                 <span class="wow fadeInUp">(1+1)</span>
                                 <h3 class="wow fadeInUp" data-wow-delay=".3s">
-                                    <a href="#contact">Апартаменты с одной спальней</a>
+                                    <a href="#0">Апартаменты с одной спальней</a>
                                 </h3>
                                 <p class="wow fadeInUp" data-wow-delay=".5s">
                                     Площадь: 61,82 м². <br>
@@ -340,21 +368,32 @@
                                     Состояние: черный каркас
                                 </p>
 
-                                <a href="#contact" class="theme-btn bg-transparent radius-none padding-style wow fadeInUp" data-wow-delay=".9s">
+                                <a href="#0" class="theme-btn bg-transparent radius-none padding-style wow fadeInUp" data-wow-delay=".9s">
                                     от $63,107
                                 </a>
                             </div>
                         </div>
                         <div class="col-lg-6 mt-lg-5 pic-2">
-                            <div class="project-image ms-0 wow fadeInUp" data-wow-delay=".4s">
-                                <img src="{{ asset('assets/img/plan/02.avif')}}" alt="img">
+                            <div class="swiper testimonial-slider ms-0 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/portfolio/02.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/02.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="portfolio-content ms-0">
                                 <span class="wow fadeInUp">(1+2)</span>
                                 <h3 class="wow fadeInUp" data-wow-delay=".3s">
-                                    <a href="#contact">Апартаменты с двумя спальнями</a>
+                                    <a href="#0">Апартаменты с двумя спальнями</a>
                                 </h3>
                                 <p class="wow fadeInUp" data-wow-delay=".5s">
                                     Площадь: 67,7 м². <br>
@@ -362,14 +401,30 @@
                                     на 40 месяцев <br>
                                     Состояние: черный каркас
                                 </p>
-                                <a href="#contact" class="theme-btn bg-transparent radius-none padding-style wow fadeInUp" data-wow-delay=".9s">
+                                <a href="#0" class="theme-btn bg-transparent radius-none padding-style wow fadeInUp" data-wow-delay=".9s">
                                     от $74,415
                                 </a>
                             </div>
                         </div>
                         <div class="col-lg-6 mt-lg-5 wow fadeInUp" data-wow-delay=".9s">
-                            <div class="project-image">
-                                <img src="{{ asset('assets/img/plan/03.avif')}}" alt="img">
+                            <div class="swiper testimonial-slider ms-0 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/031.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/032.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="project-image">
+                                            <img src="{{ asset('assets/img/plan/03.jpg') }}" alt="img">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -377,34 +432,65 @@
             </div>
         </section>
 
-        <section class="service-section fix section-padding section-bg bg-cover" id="service" style="background-image: url('{{ asset('assets/img/service/bg-shape.jpg') }}');">
+        <section class="about-section fix section-padding" id="development">
+            <div class="container">
+                <div class="about-wrapper-3 style-2">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="about-image-items">
+                                <div class="about-image-1 bg-cover wow fadeInUp" data-wow-delay=".3s" style="background-image: url('assets/img/dev/elt2.png');">
+                                    <div class="about-image-2 wow fadeInLeft" data-wow-delay=".5s">
+                                        <img src="{{ asset('assets/img/dev/EltBuilding3.jpg') }}" alt="about-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-5 mt-lg-0">
+                            <div class="about-content">
+                                <div class="section-title">
+                                    <span class="wow fadeInUp">О застройщике</span>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                        ELT Building <br> Development
+                                    </h2>
+                                </div>
+                                <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
+                                    ELT Building — динамично развивающаяся строительная компания, которая успешно реализовала уже шесть проектов в Грузии. Седьмой проект, жилищный комплекс STATUS в Батуми, подчеркивает инновационный подход компании к строительству и дизайну. Инвесторы ценят ELT Building за прозрачность сделок, высокое качество строительства и отличные инвестиционные возможности, предлагаемые каждым проектом. Стратегия компании ориентирована на создание недвижимости, которая обеспечивает стабильный доход от аренды и прирост стоимости, делая каждую покупку выгодной инвестицией. Компания активно расширяет портфолио, укрепляя свои позиции на рынке и привлекая новых инвесторов, желающих вложить средства в качественную недвижимость.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-section fix section-padding section-bg bg-cover" id="service" style="background-image: url('assets/img/service/bg-shape.jpg');">
             <div class="bg-shape">
                 <img src="{{ asset('assets/img/service/bg-shape.jpg') }}" alt="shape-img">
             </div>
             <div class="container">
                 <div class="service-wrapper">
                     <div class="row g-4">
-                        <div class="col-xl-9 col-lg-12">
+                        <div class="col-xl-12 col-lg-12">
                             <div class="service-left">
                                 <div class="section-title">
-                                    <span class="wow fadeInUp">Преимущество</span>
+                                    <span class="wow fadeInUp">Возможности</span>
                                     <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                                        Преимущества покупки недвижимости в Грузии
+                                        Инвестиционные возможности
                                     </h2>
+                                    <p class="mt-5 mt-md-0 wow fadeInUp" data-wow-delay=".4s">Представляем вашему вниманию уникальную возможность инвестировать в студии в Батуми без первоначального взноса и процентов. Распределите оплату на 40 месяцев и станьте владельцем недвижимости, которая обеспечивает ежегодный прирост стоимости на 6-8%.</p>
                                 </div>
-                                <div class="row g-4">
-
+                                <div class="row">
                                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                                         <div class="service-items">
                                             <div class="icon">
-                                                <i class="flaticon-modern-house"></i>
+                                                <i class="flaticon-award-symbol"></i>
                                             </div>
                                             <div class="content">
                                                 <h3>
-                                                    <span>Интегрированная инфраструктура</span>
+                                                    <span>Без первоначального взноса</span>
                                                 </h3>
                                                 <p>
-                                                    Комплекс входит в структуру городского пространства ELT квартал - уникального комьюнити, предназначенного не только для комфортного отдыха на берегу моря, но и для постоянного проживания!
+                                                    Инвестируйте без начальных капиталовложений
                                                 </p>
                                             </div>
                                         </div>
@@ -416,16 +502,31 @@
                                             </div>
                                             <div class="content">
                                                 <h3>
-                                                    <span>Выгодные инвестиции</span>
+                                                    <span>Срок строительства всего 30 месяцев</span>
                                                 </h3>
                                                 <p>
-                                                    STATUS HOUSE — это идеальное сочетание доступных цен и высокой доходности на рынке недвижимости Батуми.
+                                                    Ваша инвестиция станет реальностью в кратчайшие сроки
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                         <div class="service-items mt-4">
+                                            <div class="icon">
+                                                <i class="flaticon-award-symbol"></i>
+                                            </div>
+                                            <div class="content">
+                                                <h3>
+                                                    <span>Превосходное расположение</span>
+                                                </h3>
+                                                <p>
+                                                    Наслаждайтесь спокойствием в пригороде с легким доступом к центру города, который находится всего в 10 минутах езды
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="service-items">
                                             <div class="icon">
                                                 <i class="flaticon-award-symbol"></i>
                                             </div>
@@ -439,17 +540,45 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="about-button wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-                                        <a href="#contact" class="theme-btn bg-transparent">
+                                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                                        <div class="service-items mt-4">
+                                            <div class="icon">
+                                                <i class="flaticon-award-symbol"></i>
+                                            </div>
+                                            <div class="content">
+                                                <h3>
+                                                    <span>1% процентов по рассрочке</span>
+                                                </h3>
+                                                <p>
+                                                    Планируйте свои финансы без скрытых переплат
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                                        <div class="service-items mt-4">
+                                            <div class="icon">
+                                                <i class="flaticon-award-symbol"></i>
+                                            </div>
+                                            <div class="content">
+                                                <h3>
+                                                    <span>Интегрированная инфраструктура</span>
+                                                </h3>
+                                                <p>
+                                                    Комплекс входит в структуру городского пространства ELT квартал.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="about-button wow fadeInUp mt-5" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                                        <button type="button"  data-bs-toggle="modal" data-bs-target="#feedbackModal" class="theme-btn bg-transparent">
                                             Получите консультацию сейчас
                                             <i class="fas fa-long-arrow-right"></i>
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay=".9s">
-                            <div class="service-image bg-cover" style="background-image: url('{{ asset('assets/img/ge/18.JPG') }}');"></div>
                         </div>
                     </div>
                 </div>
@@ -459,9 +588,9 @@
         <section id="opportunities" class="work-process section-padding">
             <div class="container">
                 <div class="section-title text-center">
-                    <span class="wow fadeInUp">Возможности</span>
+                    <span class="wow fadeInUp">Преимущество</span>
                     <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                        Инвестиционные возможности
+                        Преимущества покупки недвижимости в Грузии
                     </h2>
                 </div>
                 <div class="row">
@@ -544,10 +673,10 @@
                             С нами Вы получите: полное сопровождение сделки нашими сотрудниками, от подборки/выбора объекта, изучения контракта, встречи вас в Батуми на живой показ/сделку, оформления ипотеки до регистрации в юстиции. Наши сотрудники становятся вашими глазами и ушами от начала до конца, пока вы живете своей привычной жизнью, а ваша квартира у моря строится.
                         </p>
                         <div class="about-button wow fadeInUp" data-wow-delay=".7s">
-                            <a href="#contact" class="theme-btn bg-transparent">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal" class="theme-btn bg-transparent">
                                 Связаться с нами
                                 <i class="fas fa-long-arrow-right"></i>
-                            </a>
+                            </button>
                         </div>
                         </div>
                     </div>
@@ -594,7 +723,6 @@
             </div>
             </div>
         </section>
-
 
         <section class="about-section fix section-padding pt-0">
             <div class="container">
@@ -675,12 +803,12 @@
                 </div>
                 <div class="testimonial-wrapper">
                     <div class="array-button">
-                        <button class="array-prev"><i class="fal fa-arrow-left"></i></button>
-                        <button class="array-next"><i class="fal fa-arrow-right"></i></button>
+                        <button class="array-next"><i class="fal fa-arrow-left"></i></button>
+                        <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
                     </div>
                     <div class="row g-0 align-items-center">
                         <div class="col-lg-6">
-                            <div class="testimonial-image bg-cover" style="background-image: url('{{ asset('assets/img/ge/19.PNG') }}');"></div>
+                            <div class="testimonial-image bg-cover" style="background-image: url('assets/img/testimonial/01.jpg');"></div>
                         </div>
                         <div class="col-lg-6 mt-5 mt-lg-0">
                             <div class="testimonial-area">
@@ -692,6 +820,7 @@
                                                     <i class="fal fa-quote-right"></i>
                                                 </div>
                                                 <div class="client-items">
+                                                    <div class="client-image bg-cover" style="background-image: url('assets/img/testimonial/04.jpg');"></div>
                                                     <div class="client-content">
                                                         <h2>Елена</h2>
                                                     </div>
@@ -707,6 +836,7 @@
                                                     <i class="fal fa-quote-right"></i>
                                                 </div>
                                                 <div class="client-items">
+                                                    <div class="client-image bg-cover" style="background-image: url('assets/img/testimonial/06.jpg');"></div>
                                                     <div class="client-content">
                                                         <h2>Олжаз</h2>
                                                     </div>
@@ -722,6 +852,7 @@
                                                     <i class="fal fa-quote-right"></i>
                                                 </div>
                                                 <div class="client-items">
+                                                    <div class="client-image bg-cover" style="background-image: url('assets/img/testimonial/01.png');"></div>
                                                     <div class="client-content">
                                                         <h2>Антон</h2>
                                                     </div>
@@ -737,6 +868,7 @@
                                                     <i class="fal fa-quote-right"></i>
                                                 </div>
                                                 <div class="client-items">
+                                                    <div class="client-image bg-cover" style="background-image: url('assets/img/testimonial/05.jpg');"></div>
                                                     <div class="client-content">
                                                         <h2>Надыр</h2>
                                                     </div>
@@ -754,49 +886,6 @@
                 </div>
             </div>
         </section>
-
-        <br >
-        <br>
-        <br>
-        <br>
-
-        <section class="achievement-section fix section-padding pt-0" id="contact">
-            <div class="container">
-                <br>
-                <br>
-                <br>
-                <br>
-                <div class="cta-banner-wrapper">
-                    <div class="icon wow fadeInUp" data-wow-delay=".3s">
-                        <img src="{{ asset('assets/img/email.svg') }}" alt="img">
-                    </div>
-                    <div class="content">
-                        <div class="row">
-                            <h2 class="wow fadeInUp" data-wow-delay=".3s">Связаться с нами</h2>
-                            <div class="col-xl-6">
-                                <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1481046",hash:"8c44888821bbd84e1785e1b6a1141b0b",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");</script><script id="amoforms_script_1481046" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1738141901"></script>
-                            </div>
-                            <div class="col-xl-6">
-                                <p class="wow fadeInUp" data-wow-delay=".5s">Успейте приобрести квартиру в элитном жилом комплексе по выгодным ценам!</p>
-                                <div class="newsletter-items text-center">
-                                    <a href="https://t.me/evgeniyaonthesea" class="theme-btn hover-white wow fadeInUp" data-wow-delay=".9s" type="submit">
-                                        <span>Написать в телеграм <i class="fab fa-telegram"></i></span>
-                                    </a>
-                                </div>
-                                <div class="newsletter-items text-center">
-                                    <a href="https://wa.me/message/GWATPMQ4X3CWF1" class="theme-btn hover-white wow fadeInUp" data-wow-delay=".9s" type="submit">
-                                        <span>Написать в whatsapp <i class="fab fa-whatsapp"></i></span>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
 
         <footer class="footer-section footer-bg">
             <div class="container">
@@ -838,12 +927,12 @@
                                     </li>
                                     <li>
                                         <a href="#service">
-                                            Преимущества
+                                            Возможности
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#opportunities">
-                                            Возможности
+                                            Преимущества
                                         </a>
                                     </li>
                                 </ul>
@@ -901,6 +990,16 @@
                 </div>
             </div>
         </footer>
+
+        <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body" style="height: 400px;">
+                        <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1481046",hash:"8c44888821bbd84e1785e1b6a1141b0b",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");</script><script id="amoforms_script_1481046" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1738575485"></script>                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
         <script src="{{ asset('assets/js/viewport.jquery.js') }}"></script>
